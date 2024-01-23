@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import "./App.css";
 import Project from "./Project";
+// import asteroid from "/images/asteroid.png";
+// import itunes from "./images/itunes-logo.png";
+// import genBlocks from "./images/gen_blocks.png";
+// import testingCenter from "./images/testing-center.png";
 
 function App() {
   return (

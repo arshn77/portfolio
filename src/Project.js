@@ -5,7 +5,7 @@ export default function Project({ name, link, img, style, code }) {
     <div
       className={`w-1/3 text-lg border border-black flex items-center justify-between overflow-hidden ${style}`}
     >
-      <img className="w-32 h-32 object-cover" src={img}></img>
+      <img className="w-32 h-32 object-cover" src={img} alt=""></img>
       <a
         className="m-4 font-semibold hover:underline"
         href={link}
