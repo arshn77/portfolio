@@ -15,7 +15,7 @@ function App() {
         <div className="flex items-center flex-col">
           <Project
             style="rounded-tl-lg rounded-tr-lg mt-4"
-            name="Testing Center"
+            name="Testing Center (Long load time)"
             link="https://arshn77.pythonanywhere.com/"
             img="/images/testing-center.png"
             code="https://github.com/arshn77/Testing-Hub"
