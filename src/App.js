@@ -13,14 +13,9 @@ function App() {
       <div className="App">
         <h1 className="text-5xl m-4 font-semibold">Arshia's Portfolio</h1>
         <div className="flex items-center flex-col">
+          
           <Project
             style="rounded-tl-lg rounded-tr-lg mt-4"
-            name="Testing Center (Long load time)"
-            link="https://arshn77.pythonanywhere.com/"
-            img="/images/testing-center.png"
-            code="https://github.com/arshn77/Testing-Hub"
-          />
-          <Project
             name="Generative Blocks"
             link="https://arshn77.github.io/generative-blocks/"
             img="/images/gen_blocks.png"
@@ -37,6 +32,12 @@ function App() {
             link="https://arshn77.github.io/artist-search/"
             img="/images/itunes-logo.png"
             code=""
+          />
+          <Project
+            name="Testing Center (old version)"
+            link="https://arshn77.pythonanywhere.com/"
+            img="/images/testing-center.png"
+            code="https://github.com/arshn77/Testing-Hub"
             style="rounded-bl-lg rounded-br-lg mb-4"
           />
         </div>
