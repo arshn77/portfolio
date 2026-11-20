@@ -1,6 +1,7 @@
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
 import Project from "./Project";
+import ThemeToggle from "./ThemeToggle";
 
 const featured = {
   name: "Style AI",
@@ -43,8 +44,8 @@ function App() {
     <>
       <div className="page">
         <header className="topbar">
-          <span className="mark">Arshia</span>
           <span className="topbar-note">Portfolio</span>
+          <ThemeToggle />
         </header>
 
         <section className="intro">
@@ -105,7 +106,7 @@ function App() {
         </section>
 
         <footer className="footer">
-          <span>© {new Date().getFullYear()} Arshia</span>
+          <span>© {new Date().getFullYear()}</span>
         </footer>
       </div>
       <Analytics />

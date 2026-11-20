@@ -12,7 +12,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #151412;
     --paper-2: #1d1c19;
     --ink: #ede9e0;
@@ -20,7 +20,21 @@
     --rule: #2f2d29;
     --accent: #f08a4b;
     --tile: #ece8df;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --paper: #151412;
+  --paper-2: #1d1c19;
+  --ink: #ede9e0;
+  --ink-2: #9d978b;
+  --rule: #2f2d29;
+  --accent: #f08a4b;
+  --tile: #ece8df;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 html {
@@ -53,8 +67,8 @@ a:focus-visible {
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 28px 0;
+  align-items: center;
+  padding: 18px 0;
   border-bottom: 1px solid var(--rule);
   font-family: var(--mono);
   font-size: 13px;
@@ -62,6 +76,75 @@ a:focus-visible {
 }
 .topbar-note {
   color: var(--ink-2);
+}
+
+/* sun / moon toggle */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper-2);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.theme-toggle:hover {
+  border-color: var(--ink-2);
+}
+.tt-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.theme-toggle.is-dark .tt-knob {
+  transform: translateX(28px);
+}
+.theme-toggle:active .tt-knob {
+  width: 28px;
+}
+.theme-toggle.is-dark:active .tt-knob {
+  transform: translateX(24px);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.theme-toggle svg {
+  overflow: visible;
+}
+.theme-toggle .tt-core,
+.theme-toggle .tt-bite,
+.theme-toggle .tt-rays {
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.3s ease;
+}
+/* light: sun, bite parked off to the side */
+.theme-toggle .tt-bite {
+  transform: translate(10px, -10px);
+}
+/* dark: rays fold away, the sun swells and gets a bite taken out of it */
+.theme-toggle.is-dark .tt-core {
+  transform: scale(1.6);
+}
+.theme-toggle.is-dark .tt-bite {
+  transform: translate(0, 0);
+}
+.theme-toggle.is-dark .tt-rays {
+  transform: rotate(90deg) scale(0.4);
+  opacity: 0;
 }
 
 /* intro */
